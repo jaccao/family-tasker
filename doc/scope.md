@@ -1,0 +1,22 @@
+## Requisites
+
+- Task template
+    - Icon
+    - Granted to?
+    - Points
+    - Max time to execute
+    - Penalty points
+    - Automatic
+        - Availability
+            - Start
+            - Duration
+            - Repeat
+    - Manual
+        - 
+- Task execution
+    - Template
+    - Who?
+    - When?
+        - Start
+        - End
+    - Points (+/-)
