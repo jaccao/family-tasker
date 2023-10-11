@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './fonts/digital-dream.ttf';
+import './fonts/digital-dream-bold.ttf';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
