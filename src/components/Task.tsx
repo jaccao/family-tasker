@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { IconType } from "react-icons";
+import { TaskHook } from "../hooks/TaskHook";
 
-export default (props:{
-  icon: IconType,
-}) => {
-  const [color, setColor] = useState("#61dafb");
-  const [time, setTime] = useState(5 * 60 * 1000);
+export default (props: { icon: IconType; hook?: TaskHook }) => {
   const Icon = props.icon;
-  useEffect(() => {
-    setTimeout(() => time && setTime(time - 1000), 1000);
-  }, [time]);
+
+  const [color, setColor] = useState("#7bb35d");
+  const [time, setTime] = useState(5 * 60 * 1000);
+  const hook = props.hook || new TaskHook(setTime, setColor, time);
+
+  useEffect(hook.useEffect.bind(hook));
   return (
     <div>
       <div>
