@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Task from "./components/Task";
-import { FaShower } from "react-icons/fa";
 
 function App() {
   return (
