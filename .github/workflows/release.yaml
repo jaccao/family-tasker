@@ -1,0 +1,31 @@
+name: Upload Release Asset
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.13.x
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: |
+          npm run build
+          zip -r release.zip build
+      - name: Release
+        uses: phuonghuynh/action-ghrelease@v1.1.0
+        with:
+          files: release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
