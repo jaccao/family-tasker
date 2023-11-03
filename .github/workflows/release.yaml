@@ -29,6 +29,8 @@ jobs:
           zip -r release.zip build
       - name: Versioning
         run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
         uses: phuonghuynh/action-ghrelease@v1.1.0
         with:
