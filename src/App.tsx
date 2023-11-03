@@ -5,7 +5,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       <video autoPlay muted loop id="backgroundvid">
-        <source src="movie.mp4" type="video/mp4" />
+        <source src="movie.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
       </header>
