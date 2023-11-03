@@ -2,9 +2,9 @@ name: Upload Release Asset
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -27,6 +27,8 @@ jobs:
         run: |
           npm run build
           zip -r release.zip build
+      - name: Versioning
+        run: npx semantic-release
       - name: Release
         uses: phuonghuynh/action-ghrelease@v1.1.0
         with:
