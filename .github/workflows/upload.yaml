@@ -2,7 +2,6 @@ name: Upload Asset
 
 on:
   release:
-    types: [published]
 
 jobs:
   build:
