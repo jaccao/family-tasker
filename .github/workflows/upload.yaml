@@ -2,6 +2,7 @@ name: Upload Asset
 
 on:
   release:
+    types: [published]
 
 jobs:
   build:
@@ -16,6 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true
+          persist-credentials: false
       - name: Setup node
         uses: actions/setup-node@v3
         with:
