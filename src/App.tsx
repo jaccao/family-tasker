@@ -1,13 +1,14 @@
 import "./App.css";
+import Background from "./components/Background";
+import TaskSymbol from "./components/TaskSymbol";
+import { FaShower } from "react-icons/fa";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <video autoPlay muted loop id="backgroundvid">
-        <source src="movie.webm" type="video/webm" />
-        Your browser does not support the video tag.
-      </video>
+        <Background faded={true} />
+        <TaskSymbol icon={FaShower} />
       </header>
     </div>
   );
